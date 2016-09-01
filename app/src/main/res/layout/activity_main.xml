@@ -13,7 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/subtitulo"
-        android:id="@+id/textView2" />
+        android:id="@+id/textView2"
+        android:layout_marginBottom="25dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +36,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/inputEmail" />
+            android:id="@+id/inputEmail"
+            android:inputType="textEmailAddress"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,7 +51,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/inputCUIT"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:inputType="number"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -57,12 +60,15 @@
             android:text="@string/importe"
             android:id="@+id/textView4"
             android:layout_below="@+id/textView2"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/inputImporte" />
+            android:id="@+id/inputImporte"
+            android:inputType="number"
+            android:layout_marginBottom="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -88,20 +94,23 @@
             android:text="0"
             android:id="@+id/textSlider"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="33dp" />
+            android:layout_marginBottom="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/intereses"
-            android:id="@+id/textView6" />
+            android:id="@+id/aCobrar" />
 
         <TextView
-            android:layout_width="155dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/intereses"
-            android:layout_weight="0.05" />
+            android:layout_weight="0.05"
+            android:textSize="30dp"
+            android:visibility="invisible"
+            android:autoText="false" />
 
         <CheckBox
             android:layout_width="wrap_content"

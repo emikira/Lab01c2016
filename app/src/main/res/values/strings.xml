@@ -8,7 +8,7 @@
     <string name="dias">Cantidad de días</string>
     <string name="botonPlazoFijo">HACER PLAZO FIJO</string>
     <string name="renovar">Renovar automáticamente al vencimiento</string>
-    <!--<string name="success">Plazo fijo realizado. Recibirá %s al vencimiento!</string>-->
+    <string name="exito">Plazo fijo realizado. Recibirá %s al vencimiento!</string>
 
 
 </resources>
