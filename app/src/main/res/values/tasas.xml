@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menor30menos5k">0.25</string>
+    <string name="mayig30menos5k">0.275</string>
+    <string name="menor30entre5y99k">0.30</string>
+    <string name="mayig30entre5y99k" >0.323</string>
+    <string name="menor30mas99k">0.35</string>
+    <string name="mayig30mas99k">0.385</string>
+</resources>
