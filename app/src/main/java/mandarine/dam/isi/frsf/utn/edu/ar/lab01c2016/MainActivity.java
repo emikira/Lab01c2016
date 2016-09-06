@@ -55,17 +55,26 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     @Override
     public void onClick(View v) {
 
-        String resPlazoFijo = calculadora();
-        aCobrar.setText("$"+resPlazoFijo);
-        aCobrar.setVisibility(v.VISIBLE);
-        resultado.setText(getString(R.string.exito, resPlazoFijo));
-        resultado.setVisibility(v.VISIBLE);
-        resultado.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.Verde));
+        try {
+            String resPlazoFijo = calculadora();
+            aCobrar.setText("$" + resPlazoFijo);
+            aCobrar.setVisibility(v.VISIBLE);
+            resultado.setText(getString(R.string.exito, resPlazoFijo));
+            resultado.setVisibility(v.VISIBLE);
+            resultado.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.Verde));
 
+        } catch (Exception e) {
+
+            resultado.setText(e.getMessage());
+            resultado.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.Rojo));
+            resultado.setVisibility(v.VISIBLE);
+        }
 
     }
 
-    public String calculadora() {
+    public String calculadora() throws Exception {
+
+        validarImporte();
 
         cantDias = slider.getProgress();
         capital = Integer.parseInt(montoIngresado.getText().toString());
@@ -76,6 +85,13 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
 
         return String.valueOf(intereses);
+    }
+
+    private void validarImporte() throws Exception{
+
+        if(montoIngresado.getText().toString().isEmpty()) {
+            throw new Exception(getString(R.string.ingreseImporte));
+        }
     }
 
     private double getInteres(double capital, Double tasa, int cantDias ) {
