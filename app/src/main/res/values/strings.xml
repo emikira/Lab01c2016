@@ -10,6 +10,8 @@
     <string name="renovar">Renovar automáticamente al vencimiento</string>
     <string name="exito">Plazo fijo realizado. Recibirá %s al vencimiento!</string>
     <string name="ingreseImporte">Debe ingresar un importe para poder realizar el cálculo</string>
+    <string name="ingreseMail">Debe ingresar un mail para poder realizar el cálculo</string>
+    <string name="ingreseCUIT">Debe ingresar un cuit para poder realizar el cálculo</string>
 
 
 </resources>

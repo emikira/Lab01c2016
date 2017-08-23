@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     TextView aCobrar;
     TextView resultado;
     EditText montoIngresado;
+    EditText mailIngresado;
+    EditText cuitIngresado;
     double intereses;
     int cantDias;
     double capital;
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         aCobrar = (TextView)findViewById(R.id.intereses);
         resultado = (TextView)findViewById(R.id.resultado);
         montoIngresado = (EditText)findViewById(R.id.inputImporte);
+        mailIngresado = (EditText)findViewById(R.id.inputEmail);
+        cuitIngresado = (EditText)findViewById(R.id.inputCUIT);
 
         slider.setOnSeekBarChangeListener(this);
         confButton.setOnClickListener(this);
@@ -75,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     public String calculadora() throws Exception {
 
         validarImporte();
+        validarEmail();
+        validarCUIT();
 
         cantDias = slider.getProgress();
         capital = Integer.parseInt(montoIngresado.getText().toString());
@@ -91,6 +97,18 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         if(montoIngresado.getText().toString().isEmpty()) {
             throw new Exception(getString(R.string.ingreseImporte));
+        }
+    }
+    private void validarEmail() throws Exception{
+
+        if(mailIngresado.getText().length()==0) {
+            throw new Exception(getString(R.string.ingreseMail));
+        }
+    }
+    private void validarCUIT() throws Exception{
+
+        if(cuitIngresado.getText().toString().isEmpty()) {
+            throw new Exception(getString(R.string.ingreseCUIT));
         }
     }
 
